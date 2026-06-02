@@ -1,5 +1,7 @@
 // const App = () => {
 
+import { useState } from "react";
+
 //   //non parameterized function
 //   const handleClick = () => {
 //     alert("Button clicked")
@@ -27,32 +29,56 @@
 // }
 
 
+// const App = () => {
+//   const profiles = [
+//     {name: "John", age: 30},
+//     {name: "Jane", age: 25 },
+//     {name: "Bob", age: 35}
+//   ];
+
+//   const data = profiles.map((profiles, index) =>{
+//     console.log(profiles,index)
+//     return (<li key = {index}>
+//       <span>Name: {profiles.name}</span> | 
+//       <span>Age: {profiles.age}</span>
+//     </li>)
+//   });
+
+// console.log(data)
+
+//   return (
+//     <div>
+//       <h1>Rendering JSON</h1>
+//       <ol>{data}</ol>
+
+//     </div>
+//   )
+// }
+
+
+
 const App = () => {
-  const profiles = [
-    {name: "John", age: 30},
-    {name: "Jane", age: 25 },
-    {name: "Bob", age: 35}
-  ];
 
-  const data = profiles.map((profiles, index) =>{
-    console.log(profiles,index)
-    return (<li key = {index}>
-      <span>Name: {profiles.name}</span> | 
-      <span>Age: {profiles.age}</span>
-    </li>)
-  });
+  const [username , setUsername] = useState("Sarthak")
 
-console.log(data)
+  const ChangeHandler = ()=>{
+    setUsername ("Ankur")
+    
+  }
+  console.log(username);
+
+
 
   return (
     <div>
-      <h1>Rendering JSON</h1>
-      <ol>{data}</ol>
-
+      <h1>Username</h1>
+      <h2>{username}</h2>
+      <button onClick={ChangeHandler}> Change Name </button>
     </div>
   )
 }
 
 export default App
+
 
 
