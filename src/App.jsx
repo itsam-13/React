@@ -1,6 +1,8 @@
 // const App = () => {
 
 import { useState } from "react";
+import Create from "./Components/Create";
+import Read from "./Components/Read";
 
 //   //non parameterized function
 //   const handleClick = () => {
@@ -92,45 +94,13 @@ const App = () => {
 
   ]);
 
-  const renderUser = users.map((user,index)=>{
-    return <li key={index}> {user.name}</li>
-  })
-  
-  const [fullName, setFullName] = useState("")
-  const [age, setAge] = useState(18)
-
-  const SubmitHandler = (e)=>{
-    e.preventDefault();
-    const newUser = {fullName,age}
-    console.log(newUser); //api -backend -database
-    
-  }
-  
 
   return (
     <div>
-      <h1>register User</h1>
-      <form action="" onSubmit={SubmitHandler}>
-
-        <input 
-        onChange={(e) => setFullName(e.target.value)} //changeHandler event in one line... arrow fnc
-        value={fullName}
-        type="text"
-        placeholder="Full Name" />
-
-        <input type="number"
-        placeholder="Enter Age" 
-        onChange={(e) => setAge(e.target.value)} 
-        value={age}
-        />
-
-        <button> Submit </button>
-
-      </form>
-      <hr />
-
-      <h1>User data </h1>
-      <ol>{renderUser}</ol>
+      <Create />
+      
+      <Read users = {users} setusers = {setUsers}  />
+      {/* Read(users,setUsers) */}
     </div>
   )
 }
