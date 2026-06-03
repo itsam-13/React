@@ -57,28 +57,83 @@ import { useState } from "react";
 
 
 
+// const App = () => {
+
+//   const [username , setUsername] = useState("Sarthak")
+
+//   const ChangeHandler = ()=>{
+//     setUsername ("Ankur")
+    
+//   }
+//   console.log(username);
+
+
+
+//   return (
+//     <div>
+//       <h1>Username</h1>
+//       <h2>{username}</h2>
+//       <button onClick={ChangeHandler}> Change Name </button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
 const App = () => {
 
-  const [username , setUsername] = useState("Sarthak")
+  const [users , setUsers] = useState([
+    {name: "John" , age: 12},
+    {name: "bici" , age: 10},
+    {name: "zozi" , age: 14},
+    {name: "rizz" , age: 32}
 
-  const ChangeHandler = ()=>{
-    setUsername ("Ankur")
+  ]);
+
+  const renderUser = users.map((user,index)=>{
+    return <li key={index}> {user.name}</li>
+  })
+  
+  const [fullName, setFullName] = useState("")
+  const [age, setAge] = useState(18)
+
+  const SubmitHandler = (e)=>{
+    e.preventDefault();
+    const newUser = {fullName,age}
+    console.log(newUser); //api -backend -database
     
   }
-  console.log(username);
-
-
+  
 
   return (
     <div>
-      <h1>Username</h1>
-      <h2>{username}</h2>
-      <button onClick={ChangeHandler}> Change Name </button>
+      <h1>register User</h1>
+      <form action="" onSubmit={SubmitHandler}>
+
+        <input 
+        onChange={(e) => setFullName(e.target.value)} //changeHandler event in one line... arrow fnc
+        value={fullName}
+        type="text"
+        placeholder="Full Name" />
+
+        <input type="number"
+        placeholder="Enter Age" 
+        onChange={(e) => setAge(e.target.value)} 
+        value={age}
+        />
+
+        <button> Submit </button>
+
+      </form>
+      <hr />
+
+      <h1>User data </h1>
+      <ol>{renderUser}</ol>
     </div>
   )
 }
 
 export default App
-
-
 
