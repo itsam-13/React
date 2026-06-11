@@ -16,20 +16,11 @@ const Create = (props) => {
             title: title,
             isCompleted: false
         }
-
-        console.log(newtodo);
-
         //setting new todo task
-
-        // const copytodos = [...todos] copied original data
-        // copytodos.push(newtodo) original data me copied data push
-        // settodos(copytodos)
-        // console.log(todos);
-
         settodos([...todos, newtodo]) //one-line
         settitle("") //title empty karne ke liye
     }
-    
+
     return (
         <>
             <h1>Create Tasks</h1>

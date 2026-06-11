@@ -11,10 +11,10 @@ const App = () => {
   ])
 
   return (
-    <Fragment>
+    <>
       <Create todos = {todos} settodos = {settodos}/>
       <Read todos = {todos} settodos = {settodos}/>
-    </Fragment>
+    </>
   )
 }
 
