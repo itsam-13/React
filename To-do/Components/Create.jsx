@@ -1,11 +1,12 @@
 import { useForm } from "react";
+import { useContext } from "react"
 import { nanoid } from "nanoid";
 import {toast} from "react-toastify"
+import { todoContext } from "../src/Wrapper"
 
-const Create = (props) => {
 
-    const todos = props.todos
-    const settodos = props.settodos
+const Create = () => {
+    const [todos, settodos] = useContext(todoContext)
 
     const { register,
         handleSubmit,
