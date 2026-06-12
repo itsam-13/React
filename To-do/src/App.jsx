@@ -1,6 +1,6 @@
-import { Fragment, useState } from "react"
-import Create from "./Create"
-import Read from "./Read"
+import { useState } from "react"
+import Create from "../Components/Create"
+import Read from "../Components/Read"
 
 
 
@@ -12,8 +12,12 @@ const App = () => {
 
   return (
     <>
-      <Create todos = {todos} settodos = {settodos}/>
-      <Read todos = {todos} settodos = {settodos}/>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4">
+        <div className="container mx-auto">
+          <Create todos = {todos} settodos = {settodos}/>
+          <Read todos = {todos} settodos = {settodos}/>
+        </div>
+      </div>
     </>
   )
 }
